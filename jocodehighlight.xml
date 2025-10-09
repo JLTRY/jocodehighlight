@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_jocodehighlight</name>
+	<author>JL TRYOEN</author>
+	<creationDate>October 2025</creationDate>
+	<copyright>Copyright (C) 2025 JL TRYOEN. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<authorUrl>www.jltryoen.fr</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_JOCODEHIGHLIGHT_XML_DESCRIPTION</description>
+	<namespace path="src">JLTRY\Plugin\Content\JOCodeHighlight</namespace>
+	<files>
+		<folder plugin="jocodehighlight">services</folder>
+		<folder>src</folder>
+		<folder>language</folder>
+		<folder>geshi</folder>
+	</files>
+	<config>
+		<fields name="params">
+		</fields>
+	</config>
+</extension>
