@@ -6,7 +6,7 @@
 		<element>jocodehighlight</element>
 		<type>plugin</type>
 		<client>site</client>
-		<version>5.0.0</version>
+		<version>1.0.0</version>
 		<infourl title="JO's Code Highlight">http://www.jltryoen.fr</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/JLTRY/jocodehighlight/releases/download/v5.0.1/jocodehighlight-5.0.1.zip</downloadurl>
