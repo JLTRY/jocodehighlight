@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="content" method="upgrade">
-	<name>plg_content_jocodehighlight</name>
+	<name>PLG_CONTENT_JOCODEHIGHLIGHT_XML</name>
 	<author>JL TRYOEN</author>
 	<creationDate>October 2025</creationDate>
 	<copyright>Copyright (C) 2025 JL TRYOEN. All rights reserved.</copyright>
@@ -8,6 +8,7 @@
 	<authorUrl>www.jltryoen.fr</authorUrl>
 	<version>1.0.0</version>
 	<description>PLG_CONTENT_JOCODEHIGHLIGHT_XML_DESCRIPTION</description>
+	<scriptfile>install.php</scriptfile>
 	<namespace path="src">JLTRY\Plugin\Content\JOCodeHighlight</namespace>
 	<files>
 		<folder plugin="jocodehighlight">services</folder>
@@ -15,6 +16,9 @@
 		<folder>language</folder>
 		<folder>geshi</folder>
 	</files>
+    <updateservers>
+       <server type="extension" priority="1" name="JO Favcats Updates">https://raw.githubusercontent.com/JLTRY/jocodehighlight/master/jocodehighlight-update.xml</server>
+    </updateservers>
 	<config>
 		<fields name="params">
 		</fields>
