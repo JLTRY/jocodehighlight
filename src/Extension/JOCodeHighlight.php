@@ -14,6 +14,7 @@
 namespace JLTRY\Plugin\Content\JOCodeHighlight\Extension;
 
 use Joomla\CMS\Event\Content\ContentPrepareEvent;
+use Joomla\CMS\Log\Log;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Utility\Utility;
@@ -64,10 +65,8 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
         {
             return true;
         }
-
         // Define the regular expression for the bot.
         $regex = "#<pre xml:\s*(.*?)>(.*?)</pre>#s";
-
         // Perform the replacement.
         $article->text = preg_replace_callback($regex, array(&$this, '_replace'), $article->text);
 
@@ -87,9 +86,10 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
 
         $args = Utility::parseAttributes($matches[1]);
         $text = $matches[2];
-
+        Log::add('jocdehighight: _replace?' . $matches[1], Log::WARNING, 'jocodehighlight');
         $lang = ArrayHelper::getValue($args, 'lang', 'php');
         $lines = ArrayHelper::getValue($args, 'lines', 'false');
+        $style = ArrayHelper::getValue($args, 'style', null);
 
         $html_entities_match = array("|\<br \/\>|", "#<#", "#>#", "|&#39;|", '#&quot;#', '#&nbsp;#');
         $html_entities_replace = array("\n", '&lt;', '&gt;', "'", '"', ' ');
@@ -110,7 +110,10 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
         }
         $geshi->set_header_type(GESHI_HEADER_DIV);
         $geshi->set_overall_class('mw-geshi');
-        $geshi->set_code_style('font-family:monospace;font-size: 13px;line-height: normal;', true);        
+        if ($style) {
+            $geshi->set_overall_style($style, true);
+        }
+        $geshi->set_code_style('font-family:monospace;font-size: 13px;line-height: normal;', true);
         $text = $geshi->parse_code();
         
         return $text;
