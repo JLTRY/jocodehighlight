@@ -5,6 +5,7 @@
 		<description>Displays formatted code in Articles based on the GeSHi highlighting engine</description>
 		<element>jocodehighlight</element>
 		<type>plugin</type>
+		<folder>content</folder>
 		<client>site</client>
 		<version>1.0.1</version>
 		<infourl title="JO's Code Highlight">http://www.jltryoen.fr</infourl>
