@@ -1,4 +1,4 @@
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 VERSION2 = $(shell echo $(VERSION)|sed 's/ /-/g')
 PACKAGE = jocodehighlight
 ZIPFILE = $(PACKAGE)-$(VERSION2).zip
@@ -28,7 +28,7 @@ $(ZIPFILE):
 
 fixversions:
 	@echo "Updating all install xml files to version $(VERSION)"
-	@find . \( -name '*.xml' ! -name 'default.xml' ! -name 'metadata.xml' ! -name 'config.xml' \) -exec  ./fixvd.sh {} $(VERSION) \;
+	@find . \( -name 'jo*.xml' ! -name 'default.xml' ! -name 'metadata.xml' ! -name 'config.xml' \) -exec  ./fixvd.sh {} $(VERSION) \;
 
 revertversions:
 	@echo "Reverting all install xml files"

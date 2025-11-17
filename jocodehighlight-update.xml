@@ -6,10 +6,10 @@
 		<element>jocodehighlight</element>
 		<type>plugin</type>
 		<client>site</client>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<infourl title="JO's Code Highlight">http://www.jltryoen.fr</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/JLTRY/jocodehighlight/releases/download/v5.0.1/jocodehighlight-5.0.1.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/JLTRY/jocodehighlight/releases/download/v1.0.1/jocodehighlight-1.0.1.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>Stable</tag>
@@ -17,10 +17,10 @@
 		<maintainer>JL TRYOEN</maintainer>
 		<maintainerurl>http://www.jltryoen.fr</maintainerurl>
 		<php_minimum>8.0</php_minimum>
-		<targetplatform name="joomla" version="(4\.[01234]|5\.[01234])"/>
-		<sha256>3C3D018D95ECB7DDB519B6D762E90D78F60DB724B238AF27E423F5DA4BB47C8D</sha256>
-		<sha384>34E433145DC0B26A6BE8547BC72BAE3B8614AB6132CE4C31DBB12E7FDE0B94CFD96059115F0F4CAEE916A8A5F5BB1625</sha384>
-		<sha512>883E4C3AE508F743E2C2F034F4E81EADD41F36EEFEBCAAFCABF0F81CE4BB569489B3B8CBDC8A5EAA8FE6DB3F48F56371A5104E959C8829D3EA5DE783257463D6</sha512>
+		<targetplatform name="joomla" version="(4\.[01234]|5\.[01234]|6\.[0])"/>
+		<sha256>4ADB7D6B6F296D4A8DAB7A97FF17D44C5BC016378BEAB2189F7928AC1C1F4D83</sha256>
+		<sha384>A8BCCBC91D44B8BFECE4FFABC4DB47C81363E8E286A7122C1D7008BEE1CD69F690D65FDCE00FC6F597027D7CEA9A299A</sha384>
+		<sha512>A7D24996BE72AA0B672510A6BFEFC4B0A23C393DB4AAD49BD98D50DD494FB69DC907B63B38296D52E9C5C5D980A77B25B05C8FC9FD3A8216A4CAEAC197A87176</sha512>
 	</update>
 </updates>
 

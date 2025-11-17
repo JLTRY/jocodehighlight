@@ -60,6 +60,12 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
         // In Joomla 4 a generic Event is passed
         // In Joomla 5 a concrete ContentPrepareEvent is passed
         [$context, $article, $params, $page] = array_values($event->getArguments());
+        // 1st check the srchighlight
+        if (! (strpos($article->text, '{srchighlight') === false))
+        {
+            $regex = "#{srchighlight\s([^\}]+?)\}(.+?)\{\/srchighlight\}#s";
+            $article->text = preg_replace_callback($regex, array(&$this, '_replaceSrc'), $article->text);
+        }
         // Simple performance check to determine whether bot should process further.
         if (strpos($article->text, 'pre>') === false)
         {
@@ -71,6 +77,26 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
         $article->text = preg_replace_callback($regex, array(&$this, '_replace'), $article->text);
 
         return true;
+    }
+
+    /**
+     * Replaces the matched tags.
+     *
+     * @param   array  An array of matches (see preg_match_all)
+     * @return  string
+     */
+    protected function _replaceSrc($matches) {
+        $base = $matches[0];
+        $replace = '<pre '.  $matches[1]. '>%s</pre>';
+        $filename = JPATH_ROOT . '/files/srchighlight/'. $matches[2];
+        if (file_exists($filename)){
+            Log::add('srchighight:match:' . $filename, Log::WARNING, 'srchighlight');
+            $content = sprintf($replace, file_get_contents($filename));
+        }
+        else {
+            $content = "file does not exist:" . $filename;
+        }
+        return str_replace($base, $content, $matches[0]);
     }
 
     /**
