@@ -117,8 +117,8 @@ class JOCodeHighlight extends CMSPlugin implements SubscriberInterface
         $lines = ArrayHelper::getValue($args, 'lines', 'false');
         $style = ArrayHelper::getValue($args, 'style', null);
 
-        $html_entities_match = array("|\<br \/\>|", "#<#", "#>#", "|&#39;|", '#&quot;#', '#&nbsp;#');
-        $html_entities_replace = array("\n", '&lt;', '&gt;', "'", '"', ' ');
+        $html_entities_match = array("|\<br \/\>|", "#<#", "#>#", "|&#39;|", '#&quot;#', '#&nbsp;#', '|&#123;|');
+        $html_entities_replace = array("\n", '&lt;', '&gt;', "'", '"', ' ', '{');
 
         $text = preg_replace($html_entities_match, $html_entities_replace, $text);
 
