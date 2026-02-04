@@ -17,7 +17,7 @@
 		<folder>geshi</folder>
 	</files>
     <updateservers>
-       <server type="extension" priority="1" name="JO's Code Highlight Updates">https://raw.githubusercontent.com/JLTRY/jocodehighlight/master/jocodehighlight-update.xml</server>
+       <server type="extension" priority="1" name="JO's Code Highlighter Updates">https://raw.githubusercontent.com/JLTRY/jocodehighlight/master/jocodehighlight-update.xml</server>
     </updateservers>
 	<config>
 		<fields name="params">
