@@ -3,8 +3,7 @@
 /*------------------------------------------------------------------------
 # mod_jofavcats - JO Favorite Categories
 # ------------------------------------------------------------------------
-# author    JL TRYOEN / Jesús Vargas Garita
-# Copyright (C) 2010 www.joomlahill.com. All Rights Reserved.
+# author    JL TRYOEN
 # Copyright (C) 2025 www.jltryoen.fr All Rights Reserved.
 # @license - http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
 # Websites: http://www.jltryoen.fr http://www.joomlahill.com
